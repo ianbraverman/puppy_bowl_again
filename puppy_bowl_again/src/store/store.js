@@ -1,10 +1,10 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { configureStore } from "@reduxjs/toolkit";
+import api from "./api";
 
-const api = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl:
-      "https://fsa-puppy-bowl.herokuapp.com/api/2401-FSA-ET-WEB-FT-SF-BOB/",
-  }),
-  endpoints: () => ({}),
+const store = configureStore({
+  reducer: { [api.reducerPath]: api.reducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
 });
-export default api;
+
+export default store;
