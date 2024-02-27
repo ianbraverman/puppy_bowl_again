@@ -1,16 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-//import Puppies from Puppies.jsx
-//import Puppy from Puppy.jsx
+import Mainpage from "./Mainpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Puppies />,
+    element: <Mainpage />,
   },
-  {
-    path: "/puppy/:id",
-    element: <Puppy />,
-  },
+  //{
+  // path: "/puppy/:id",
+  //element: <Puppy />,
+  //},
 ]);
 
 export default router;
